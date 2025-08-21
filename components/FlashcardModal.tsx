@@ -5,10 +5,13 @@ import { generateFlashcards } from '../services/geminiService';
 import Spinner from './Spinner';
 import { XIcon, RefreshIcon, ArrowLeftIcon, ArrowRightIcon, CloudDownloadIcon } from './Icons';
 import * as pdfjsLib from 'pdfjs-dist';
-import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
-// PDF.js worker setup is required.
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+// Set up the PDF.js worker. This is required for the library to work.
+// Use `new URL` to correctly resolve the worker path in Vite.
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.mjs',
+  import.meta.url
+).toString();
 
 
 interface FlashcardModalProps {

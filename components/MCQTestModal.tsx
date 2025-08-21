@@ -4,10 +4,13 @@ import { generateMCQs } from '../services/geminiService';
 import Spinner from './Spinner';
 import { XIcon, CheckCircleIcon, XCircleIcon } from './Icons';
 import * as pdfjsLib from 'pdfjs-dist';
-import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
 // Set up the PDF.js worker. This is required for the library to work.
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+// Use `new URL` to correctly resolve the worker path in Vite.
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.mjs',
+  import.meta.url
+).toString();
 
 
 interface MCQTestModalProps {
