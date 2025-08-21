@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, Outlet } from 'https://esm.sh/react-router-dom';
+import { HashRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';

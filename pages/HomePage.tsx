@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { useNavigate } from 'https://esm.sh/react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getResources, deleteResource } from '../services/googleSheetService';
 import { getSubjects } from '../services/subjectService';
 import { Resource, Subject } from '../types';

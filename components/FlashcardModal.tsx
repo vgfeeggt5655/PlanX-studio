@@ -5,9 +5,10 @@ import { generateFlashcards } from '../services/geminiService';
 import Spinner from './Spinner';
 import { XIcon, RefreshIcon, ArrowLeftIcon, ArrowRightIcon, CloudDownloadIcon } from './Icons';
 import * as pdfjsLib from 'pdfjs-dist';
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
 // PDF.js worker setup is required.
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://esm.sh/pdfjs-dist@4.5.136/build/pdf.worker.mjs`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 
 interface FlashcardModalProps {

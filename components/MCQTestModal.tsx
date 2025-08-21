@@ -4,9 +4,10 @@ import { generateMCQs } from '../services/geminiService';
 import Spinner from './Spinner';
 import { XIcon, CheckCircleIcon, XCircleIcon } from './Icons';
 import * as pdfjsLib from 'pdfjs-dist';
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
 // Set up the PDF.js worker. This is required for the library to work.
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://esm.sh/pdfjs-dist@4.5.136/build/pdf.worker.mjs`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 
 interface MCQTestModalProps {

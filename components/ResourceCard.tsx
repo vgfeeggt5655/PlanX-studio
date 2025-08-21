@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'https://esm.sh/react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Resource, User } from '../types';
 import { EditIcon, TrashIcon } from './Icons';
 
